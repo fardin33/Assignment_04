@@ -38,40 +38,44 @@
 
   <body class="geist">
     <!-- Main Section For Whole Page -->
-    <section class="w-[80%] mx-auto mt-13">
-      <!-- First Main Part - 01  : Header Part   -->
+    <section class="w-[80%] mx-auto mt-8">
+      <header>
+        <!-- First Main Part - 01  : Header Part   -->
 
-      <!-- Header Text : Job Application Tracker -->
-      <h2 class="text-[#002C5C] text-[30px] font-bold">
-        Job Application Tracker
-      </h2>
+        <!-- Header Text : Job Application Tracker -->
+        <h2 class="text-[#002C5C] text-[30px] font-bold">
+          Job Application Tracker
+        </h2>
 
-      <!-- Parent Div of 3 Cards + Bottom Border Line -->
-      <div class="grid grid-cols-3 gap-4 mt-5 border-b border-[#E6E7E9] pb-7.5">
-        <!-- Child Card - 01 : Total Card -->
+        <!-- Parent Div of 3 Cards + Bottom Border Line -->
         <div
-          class="total-card bg-white p-5 rounded-lg border-gray-100 shadow-[0_1px_1px_rgba(0,0,0,0.05)]"
+          class="grid grid-cols-3 gap-4 mt-5 border-b border-[#E6E7E9] pb-7.5"
         >
-          <p class="text-text-black text-sm">Total</p>
-          <h2 class="text-[#002C5C] text-2xl">8</h2>
-        </div>
+          <!-- Child Card - 01 : Total Card -->
+          <div
+            class="total-card bg-white p-5 rounded-lg border-gray-100 shadow-[0_1px_1px_rgba(0,0,0,0.05)]"
+          >
+            <p class="text-text-black text-sm">Total</p>
+            <p id="total-job-card" class="text-[#002C5C] text-2xl">0</p>
+          </div>
 
-        <!-- Child Card - 02 : Interview Card -->
-        <div
-          class="total-card bg-white p-5 rounded-lg border border-gray-100 shadow-[0_1px_1px_rgba(0,0,0,0.05)]"
-        >
-          <p class="text-black text-sm">Interview</p>
-          <h2 class="text-[#10B981] text-2xl">0</h2>
-        </div>
+          <!-- Child Card - 02 : Interview Card -->
+          <div
+            class="total-card bg-white p-5 rounded-lg border border-gray-100 shadow-[0_1px_1px_rgba(0,0,0,0.05)]"
+          >
+            <p class="text-black text-sm">Interview</p>
+            <p id="interview-jobs-card" class="text-[#10B981] text-2xl">0</p>
+          </div>
 
-        <!-- Child Card - 03 : Rejected Card -->
-        <div
-          class="total-card bg-white p-5 rounded-lg border border-gray-100 shadow-[0_1px_1px_rgba(0,0,0,0.05)]"
-        >
-          <p class="text-text-black text-sm">Rejected</p>
-          <h2 class="text-[#EF4444] text-2xl">0</h2>
+          <!-- Child Card - 03 : Rejected Card -->
+          <div
+            class="total-card bg-white p-5 rounded-lg border border-gray-100 shadow-[0_1px_1px_rgba(0,0,0,0.05)]"
+          >
+            <p class="text-text-black text-sm">Rejected</p>
+            <p id="rejected-job-card" class="text-[#EF4444] text-2xl">0</p>
+          </div>
         </div>
-      </div>
+      </header>
 
       <!-- Second Parent Part - 02 : Second Main Part || Available Jobs || All,Interview,Rejected -->
       <section class="second-main-section">
@@ -79,91 +83,563 @@
         <div class="mt-[30px]">
           <div class="flex justify-between">
             <h2 class="text-lg font-semibold text-[#002C5C]">Available Jobs</h2>
-            <span class="text-[#64748B] font-medium"> 8 </span>
+            <span id="available-jobs" class="text-[#64748B] font-medium">
+            </span>
           </div>
         </div>
 
         <!-- Second child Part - 02 : All,Interview,Rejected Toggling -->
         <div class="flex gap-2">
+          <!-- All job Offers Button -->
           <button
-            class="text-white bg-[#3B82F6] text-[12px] rounded-sm py-1.5 px-8 mt-5"
+            onclick="toggleStyle('All-btn')"
+            id="All-btn"
+            class="text-white bg-[#3B82F6] text-[12px] font-medium rounded-sm py-1.5 px-8 mt-5 border-gray-100 shadow-[0_1px_1px_rgba(0,0,0,0.05)]""
           >
             All
           </button>
+
+          <!-- Interview Button -->
           <button
-            class="text-[#64748B] bg-white text-[12px] font-medium rounded-sm py-1.5 px-8 mt-5 border-gray-100 shadow-[0_1px_1px_rgba(0,0,0,0.05)] hover:bg-gray-600 hover:text-white"
+            onclick="toggleStyle('Interview-btn')"
+            id="Interview-btn"
+            class="text-[#64748B] bg-white text-[12px] font-medium rounded-sm py-1.5 px-8 mt-5 border-gray-100 shadow-[0_1px_1px_rgba(0,0,0,0.05)]"
           >
+            <!-- hover:bg-gray-600 hover:text-white -->
             Interview
           </button>
+
+          <!-- Rejected Button -->
           <button
-            class="text-[#64748B] bg-white text-[12px] font-medium rounded-sm py-1.5 px-8 mt-5 border-gray-100 shadow-[0_1px_1px_rgba(0,0,0,0.05)] hover:bg-gray-600 hover:text-white"
+            onclick="toggleStyle('Rejected-btn')"
+            id="Rejected-btn"
+            class="text-[#64748B] bg-white text-[12px] font-medium rounded-sm py-1.5 px-8 mt-5 border-gray-100 shadow-[0_1px_1px_rgba(0,0,0,0.05)]"
           >
+            <!-- hover:bg-gray-600 hover:text-white -->
             Rejected
           </button>
         </div>
 
         <!-- Third Child Part - 03 : Job Offer Cards -->
-        <!-- Main Card - 01 : Main Div -->
-        <div
-          class="offers-parent-card mt-3 bg-FFFFFF border-gray-300 bg-white shadow-[0_1px_1px_rgba(0,0,0,0.05)] rounded-lg p-6"
-        >
-          <!-- Part - 01 -->
-          <div class="mobile-first-card flex justify-between items-center">
-            <!-- Title + developer role -->
-            <div class="comp-title">
-              <h2 class="text-[#002C5C] text-lg font-semibold">
-                Mobile First Corp
-              </h2>
-              <p class="text-[#64748B] text-[16px] font-normal">
-                React Native Developer
+
+        <!-- Section Of All Job offers Card  -->
+        <section id="all-jobs-available">
+          <!-- Main Card - 01 : -->
+          <div
+            class="offers-parent-card mt-3 bg-FFFFFF border border-gray-100 bg-white shadow-[0_1px_1px_rgba(0,0,0,0.05)] rounded-lg p-6 mb-4"
+          >
+            <!-- Part - 01 -->
+            <div class="mobile-first-card flex justify-between items-center">
+              <!-- Title + developer role -->
+              <div class="comp-title">
+                <h2 class="text-[#002C5C] text-lg font-semibold">
+                  Mobile First Corp
+                </h2>
+                <p class="text-[#64748B] text-[15px] font-normal">
+                  React Native Developer
+                </p>
+              </div>
+
+              <!-- Delete Button -->
+              <button
+                class="border border-gray-200 rounded-full p-3 flex items-center justify-center hover:bg-gray-100"
+              >
+                <i class="fa-regular fa-trash-can text-gray-500"></i>
+              </button>
+            </div>
+
+            <!-- Part - 02 -->
+            <div class="mobile-second-card mt-4">
+              <p class="text-[#64748B] text-[14px] font-normal">
+                Remote • Full-time • $130,000 - $175,000
               </p>
             </div>
 
-            <!-- Delete Button -->
-            <button
-              class="border border-gray-200 rounded-full p-3 flex items-center justify-center hover:bg-gray-100"
-            >
-              <i class="fa-regular fa-trash-can text-gray-500"></i>
-            </button>
+            <!-- Part - 03 -->
+            <div class="mobile-third-card">
+              <button
+                class="text-[#002C5C] bg-[#EEF4FF] text-[12px] font-medium rounded-sm p-2 mt-5 border-gray-100 shadow-[0_1px_1px_rgba(0,0,0,0.05)]"
+              >
+                NOT APPLIED
+              </button>
+
+              <p class="text-[#323B49] text-sm mt-2">
+                Build cross-platform mobile applications using React Native.
+                Work on products used by millions of users worldwide.
+              </p>
+            </div>
+
+            <!-- Part - 04 -->
+            <div class="mobile-fourth-card flex gap-2">
+              <button
+                class="text-[#10B981] text-[12px] font-semibold rounded-sm p-2 mt-5 border border-[#10B981] hover:bg-[#10B981] hover:text-white"
+              >
+                INTERVIEW
+              </button>
+
+              <button
+                class="text-[#EF4444] text-[12px] font-semibold rounded-sm p-2 mt-5 border border-[#EF4444] hover:bg-[#EF4444] hover:text-white"
+              >
+                REJECTED
+              </button>
+            </div>
           </div>
 
-          <!-- Part - 02 -->
-          <div class="mobile-second-card mt-4">
-            <p class="text-[#64748B] text-[14px] font-normal">
-              Remote • Full-time • $130,000 - $175,000
-            </p>
+          <!-- Main Card - 02 : -->
+          <div
+            class="offers-parent-card mt-3 bg-FFFFFF border border-gray-100 bg-white shadow-[0_1px_1px_rgba(0,0,0,0.05)] rounded-lg p-6 mb-4"
+          >
+            <!-- Part - 01 -->
+            <div class="mobile-first-card flex justify-between items-center">
+              <!-- Title + developer role -->
+              <div class="comp-title">
+                <h2 class="text-[#002C5C] text-lg font-semibold">
+                  WebFlow Agency
+                </h2>
+                <p class="text-[#64748B] text-[16px] font-normal">
+                  Web Designer & Developer
+                </p>
+              </div>
+
+              <!-- Delete Button -->
+              <button
+                class="border border-gray-200 rounded-full p-3 flex items-center justify-center hover:bg-gray-100"
+              >
+                <i class="fa-regular fa-trash-can text-gray-500"></i>
+              </button>
+            </div>
+
+            <!-- Part - 02 -->
+            <div class="mobile-second-card mt-4">
+              <p class="text-[#64748B] text-[14px] font-normal">
+                Los Angeles, CA • Part-time • $80,000 - $120,000
+              </p>
+            </div>
+
+            <!-- Part - 03 -->
+            <div class="mobile-third-card">
+              <button
+                class="text-[#002C5C] bg-[#EEF4FF] text-[12px] font-medium rounded-sm p-2 mt-5 border-gray-100 shadow-[0_1px_1px_rgba(0,0,0,0.05)]"
+              >
+                NOT APPLIED
+              </button>
+
+              <p class="text-[#323B49] text-sm mt-2">
+                Create stunning web experiences for high-profile clients. Must
+                have portfolio and experience with modern web design trends.
+              </p>
+            </div>
+
+            <!-- Part - 04 -->
+            <div class="mobile-fourth-card flex gap-2">
+              <button
+                class="text-[#10B981] text-[12px] font-semibold rounded-sm p-2 mt-5 border border-[#10B981] hover:bg-[#10B981] hover:text-white"
+              >
+                INTERVIEW
+              </button>
+
+              <button
+                class="text-[#EF4444] text-[12px] font-semibold rounded-sm p-2 mt-5 border border-[#EF4444] hover:bg-[#EF4444] hover:text-white"
+              >
+                REJECTED
+              </button>
+            </div>
           </div>
 
-          <!-- Part - 03 -->
-          <div class="mobile-third-card">
-            <button
-              class="text-[#002C5C] bg-[#EEF4FF] text-[12px] font-medium rounded-sm p-2 mt-5 border-gray-100 shadow-[0_1px_1px_rgba(0,0,0,0.05)]"
-            >
-              NOT APPLIED
-            </button>
+          <!-- Main Card - 03 : -->
+          <div
+            class="offers-parent-card mt-3 bg-FFFFFF border border-gray-100 bg-white shadow-[0_1px_1px_rgba(0,0,0,0.05)] rounded-lg p-6 mb-4"
+          >
+            <!-- Part - 01 -->
+            <div class="mobile-first-card flex justify-between items-center">
+              <!-- Title + developer role -->
+              <div class="comp-title">
+                <h2 class="text-[#002C5C] text-lg font-semibold">
+                  DataViz Solutions
+                </h2>
+                <p class="text-[#64748B] text-[16px] font-normal">
+                  Data Visualization Specialist
+                </p>
+              </div>
 
-            <p class="text-[#323B49] text-sm mt-2">
-              Build cross-platform mobile applications using React Native. Work
-              on products used by millions of users worldwide.
-            </p>
+              <!-- Delete Button -->
+              <button
+                class="border border-gray-200 rounded-full p-3 flex items-center justify-center hover:bg-gray-100"
+              >
+                <i class="fa-regular fa-trash-can text-gray-500"></i>
+              </button>
+            </div>
+
+            <!-- Part - 02 -->
+            <div class="mobile-second-card mt-4">
+              <p class="text-[#64748B] text-[14px] font-normal">
+                Boston, MA • Full-time • $125,000 - $165,000
+              </p>
+            </div>
+
+            <!-- Part - 03 -->
+            <div class="mobile-third-card">
+              <button
+                class="text-[#002C5C] bg-[#EEF4FF] text-[12px] font-medium rounded-sm p-2 mt-5 border-gray-100 shadow-[0_1px_1px_rgba(0,0,0,0.05)]"
+              >
+                NOT APPLIED
+              </button>
+
+              <p class="text-[#323B49] text-sm mt-2">
+                Transform complex data into compelling visualizations. Required
+                skills: D3.js, React, and strong analytical thinking.
+              </p>
+            </div>
+
+            <!-- Part - 04 -->
+            <div class="mobile-fourth-card flex gap-2">
+              <button
+                class="text-[#10B981] text-[12px] font-semibold rounded-sm p-2 mt-5 border border-[#10B981] hover:bg-[#10B981] hover:text-white"
+              >
+                INTERVIEW
+              </button>
+
+              <button
+                class="text-[#EF4444] text-[12px] font-semibold rounded-sm p-2 mt-5 border border-[#EF4444] hover:bg-[#EF4444] hover:text-white"
+              >
+                REJECTED
+              </button>
+            </div>
           </div>
 
-          <!-- Part - 04 -->
-          <div class="mobile-fourth-card flex gap-2">
-            <button
-              class="text-[#10B981] text-[12px] font-semibold rounded-sm p-2 mt-5 border border-[#10B981] hover:bg-gray-800 hover:text-[#10B981]"
-            >
-              INTERVIEW
-            </button>
+          <!-- Main Card - 04 : -->
+          <div
+            class="offers-parent-card mt-3 bg-FFFFFF border border-gray-100 bg-white shadow-[0_1px_1px_rgba(0,0,0,0.05)] rounded-lg p-6 mb-4"
+          >
+            <!-- Part - 01 -->
+            <div class="mobile-first-card flex justify-between items-center">
+              <!-- Title + developer role -->
+              <div class="comp-title">
+                <h2 class="text-[#002C5C] text-lg font-semibold">
+                  CloudFirst Inc
+                </h2>
+                <p class="text-[#64748B] text-[16px] font-normal">
+                  Backend Developer
+                </p>
+              </div>
 
-            <button
-              class="text-[#EF4444] text-[12px] font-semibold rounded-sm p-2 mt-5 border border-[#EF4444] hover:bg-gray-800 hover:text-[#EF4444]"
-            >
-              REJECTED
-            </button>
+              <!-- Delete Button -->
+              <button
+                class="border border-gray-200 rounded-full p-3 flex items-center justify-center hover:bg-gray-100"
+              >
+                <i class="fa-regular fa-trash-can text-gray-500"></i>
+              </button>
+            </div>
+
+            <!-- Part - 02 -->
+            <div class="mobile-second-card mt-4">
+              <p class="text-[#64748B] text-[14px] font-normal">
+                Seattle, WA • Full-time • $140,000 - $190,000
+              </p>
+            </div>
+
+            <!-- Part - 03 -->
+            <div class="mobile-third-card">
+              <button
+                class="text-[#002C5C] bg-[#EEF4FF] text-[12px] font-medium rounded-sm p-2 mt-5 border-gray-100 shadow-[0_1px_1px_rgba(0,0,0,0.05)]"
+              >
+                NOT APPLIED
+              </button>
+
+              <p class="text-[#323B49] text-sm mt-2">
+                Design and maintain scalable backend systems using Python and
+                AWS. Work with modern DevOps practices and cloud infrastructure.
+              </p>
+            </div>
+
+            <!-- Part - 04 -->
+            <div class="mobile-fourth-card flex gap-2">
+              <button
+                class="text-[#10B981] text-[12px] font-semibold rounded-sm p-2 mt-5 border border-[#10B981] hover:bg-[#10B981] hover:text-white"
+              >
+                INTERVIEW
+              </button>
+
+              <button
+                class="text-[#EF4444] text-[12px] font-semibold rounded-sm p-2 mt-5 border border-[#EF4444] hover:bg-[#EF4444] hover:text-white"
+              >
+                REJECTED
+              </button>
+            </div>
           </div>
-        </div>
+
+          <!-- Main Card - 05 : -->
+          <div
+            class="offers-parent-card mt-3 bg-FFFFFF border border-gray-100 bg-white shadow-[0_1px_1px_rgba(0,0,0,0.05)] rounded-lg p-6 mb-4"
+          >
+            <!-- Part - 01 -->
+            <div class="mobile-first-card flex justify-between items-center">
+              <!-- Title + developer role -->
+              <div class="comp-title">
+                <h2 class="text-[#002C5C] text-lg font-semibold">
+                  Innovation Labs
+                </h2>
+                <p class="text-[#64748B] text-[16px] font-normal">
+                  UI/UX Engineer
+                </p>
+              </div>
+
+              <!-- Delete Button -->
+              <button
+                class="border border-gray-200 rounded-full p-3 flex items-center justify-center hover:bg-gray-100"
+              >
+                <i class="fa-regular fa-trash-can text-gray-500"></i>
+              </button>
+            </div>
+
+            <!-- Part - 02 -->
+            <div class="mobile-second-card mt-4">
+              <p class="text-[#64748B] text-[14px] font-normal">
+                Austin, TX • Full-time • $110,000 - $150,000
+              </p>
+            </div>
+
+            <!-- Part - 03 -->
+            <div class="mobile-third-card">
+              <button
+                class="text-[#002C5C] bg-[#EEF4FF] text-[12px] font-medium rounded-sm p-2 mt-5 border-gray-100 shadow-[0_1px_1px_rgba(0,0,0,0.05)]"
+              >
+                NOT APPLIED
+              </button>
+
+              <p class="text-[#323B49] text-sm mt-2">
+                Create beautiful and functional user interfaces for our suite of
+                products. Strong design skills and frontend development
+                expertise required.
+              </p>
+            </div>
+
+            <!-- Part - 04 -->
+            <div class="mobile-fourth-card flex gap-2">
+              <button
+                class="text-[#10B981] text-[12px] font-semibold rounded-sm p-2 mt-5 border border-[#10B981] hover:bg-[#10B981] hover:text-white"
+              >
+                INTERVIEW
+              </button>
+
+              <button
+                class="text-[#EF4444] text-[12px] font-semibold rounded-sm p-2 mt-5 border border-[#EF4444] hover:bg-[#EF4444] hover:text-white"
+              >
+                REJECTED
+              </button>
+            </div>
+          </div>
+
+          <!-- Main Card - 06 : -->
+          <div
+            class="offers-parent-card mt-3 bg-FFFFFF border border-gray-100 bg-white shadow-[0_1px_1px_rgba(0,0,0,0.05)] rounded-lg p-6 mb-4"
+          >
+            <!-- Part - 01 -->
+            <div class="mobile-first-card flex justify-between items-center">
+              <!-- Title + developer role -->
+              <div class="comp-title">
+                <h2 class="text-[#002C5C] text-lg font-semibold">
+                  MegaCorp Solutions
+                </h2>
+                <p class="text-[#64748B] text-[16px] font-normal">
+                  JavaScript Developer
+                </p>
+              </div>
+
+              <!-- Delete Button -->
+              <button
+                class="border border-gray-200 rounded-full p-3 flex items-center justify-center hover:bg-gray-100"
+              >
+                <i class="fa-regular fa-trash-can text-gray-500"></i>
+              </button>
+            </div>
+
+            <!-- Part - 02 -->
+            <div class="mobile-second-card mt-4">
+              <p class="text-[#64748B] text-[14px] font-normal">
+                New York, NY • Full-time • $130,000 - $170,00
+              </p>
+            </div>
+
+            <!-- Part - 03 -->
+            <div class="mobile-third-card">
+              <button
+                class="text-[#002C5C] bg-[#EEF4FF] text-[12px] font-medium rounded-sm p-2 mt-5 border-gray-100 shadow-[0_1px_1px_rgba(0,0,0,0.05)]"
+              >
+                NOT APPLIED
+              </button>
+
+              <p class="text-[#323B49] text-sm mt-2">
+                Build enterprise applications with JavaScript and modern
+                frameworks. We offer competitive compensation, health insurance,
+                and professional development opportunities.
+              </p>
+            </div>
+
+            <!-- Part - 04 -->
+            <div class="mobile-fourth-card flex gap-2">
+              <button
+                class="text-[#10B981] text-[12px] font-semibold rounded-sm p-2 mt-5 border border-[#10B981] hover:bg-[#10B981] hover:text-white"
+              >
+                INTERVIEW
+              </button>
+
+              <button
+                class="text-[#EF4444] text-[12px] font-semibold rounded-sm p-2 mt-5 border border-[#EF4444] hover:bg-[#EF4444] hover:text-white"
+              >
+                REJECTED
+              </button>
+            </div>
+          </div>
+
+          <!-- Main Card - 07 : -->
+          <div
+            class="offers-parent-card mt-3 bg-FFFFFF border border-gray-100 bg-white shadow-[0_1px_1px_rgba(0,0,0,0.05)] rounded-lg p-6 mb-4"
+          >
+            <!-- Part - 01 -->
+            <div class="mobile-first-card flex justify-between items-center">
+              <!-- Title + developer role -->
+              <div class="comp-title">
+                <h2 class="text-[#002C5C] text-lg font-semibold">StartupXYZ</h2>
+                <p class="text-[#64748B] text-[16px] font-normal">
+                  Full Stack Engineer
+                </p>
+              </div>
+
+              <!-- Delete Button -->
+              <button
+                class="border border-gray-200 rounded-full p-3 flex items-center justify-center hover:bg-gray-100"
+              >
+                <i class="fa-regular fa-trash-can text-gray-500"></i>
+              </button>
+            </div>
+
+            <!-- Part - 02 -->
+            <div class="mobile-second-card mt-4">
+              <p class="text-[#64748B] text-[14px] font-normal">
+                Remote • Full-time • $120,000 - $160,000
+              </p>
+            </div>
+
+            <!-- Part - 03 -->
+            <div class="mobile-third-card">
+              <button
+                class="text-[#002C5C] bg-[#EEF4FF] text-[12px] font-medium rounded-sm p-2 mt-5 border-gray-100 shadow-[0_1px_1px_rgba(0,0,0,0.05)]"
+              >
+                NOT APPLIED
+              </button>
+
+              <p class="text-[#323B49] text-sm mt-2">
+                Join our fast-growing startup and work on our core platform.
+                Experience with Node.js and React required. Great benefits and
+                equity package included.
+              </p>
+            </div>
+
+            <!-- Part - 04 -->
+            <div class="mobile-fourth-card flex gap-2">
+              <button
+                class="text-[#10B981] text-[12px] font-semibold rounded-sm p-2 mt-5 border border-[#10B981] hover:bg-[#10B981] hover:text-white"
+              >
+                INTERVIEW
+              </button>
+
+              <button
+                class="text-[#EF4444] text-[12px] font-semibold rounded-sm p-2 mt-5 border border-[#EF4444] hover:bg-[#EF4444] hover:text-white"
+              >
+                REJECTED
+              </button>
+            </div>
+          </div>
+
+          <!-- Main Card - 08 : -->
+          <div
+            class="offers-parent-card mt-3 bg-FFFFFF border-gray-300 bg-white shadow-[0_1px_1px_rgba(0,0,0,0.05)] rounded-lg p-6 mb-8"
+          >
+            <!-- Part - 01 -->
+            <div class="mobile-first-card flex justify-between items-center">
+              <!-- Title + developer role -->
+              <div class="comp-title">
+                <h2 class="text-[#002C5C] text-lg font-semibold">
+                  TechCorp Industries
+                </h2>
+                <p class="text-[#64748B] text-[16px] font-normal">
+                  Senior Frontend Developer
+                </p>
+              </div>
+
+              <!-- Delete Button -->
+              <button
+                class="border border-gray-200 rounded-full p-3 flex items-center justify-center hover:bg-gray-100"
+              >
+                <i class="fa-regular fa-trash-can text-gray-500"></i>
+              </button>
+            </div>
+
+            <!-- Part - 02 -->
+            <div class="mobile-second-card mt-4">
+              <p class="text-[#64748B] text-[14px] font-normal">
+                San Francisco, CA • Full-time • $130,000 - $175,000
+              </p>
+            </div>
+
+            <!-- Part - 03 -->
+            <div class="mobile-third-card">
+              <button
+                class="text-[#002C5C] bg-[#EEF4FF] text-[12px] font-medium rounded-sm p-2 mt-5 border-gray-100 shadow-[0_1px_1px_rgba(0,0,0,0.05)]"
+              >
+                NOT APPLIED
+              </button>
+
+              <p class="text-[#323B49] text-sm mt-2">
+                We are looking for an experienced Frontend Developer to build
+                scalable web applications using React and TypeScript. You will
+                work with a talented team on cutting-edge projects.
+              </p>
+            </div>
+
+            <!-- Part - 04 -->
+            <div class="mobile-fourth-card flex gap-2">
+              <button
+                class="text-[#10B981] text-[12px] font-semibold rounded-sm p-2 mt-5 border border-[#10B981] hover:bg-[#10B981] hover:text-white"
+              >
+                INTERVIEW
+              </button>
+
+              <button
+                class="text-[#EF4444] text-[12px] font-semibold rounded-sm p-2 mt-5 border border-[#EF4444] hover:bg-[#EF4444] hover:text-white"
+              >
+                REJECTED
+              </button>
+            </div>
+          </div>
+        </section>
       </section>
+      <!-- No Jobs Available Section : -->
+      <div
+        id="No-jobs-available"
+        class="w-[80] mx-auto flex items-center justify-center border border-gray-100 bg-white shadow-[0_1px_1px_rgba(0,0,0,0.05)] rounded-lg mb-4 p-28"
+      >
+        <div class="rounded-lg text-center">
+          <img
+            class="h-20 mx-auto mb-3"
+            src="./Assets/jobs.png"
+            alt="Not Found"
+          />
+          <h2 class="text-[#002C5C] font-semibold text-[24px]">
+            No jobs available
+          </h2>
+          <p class="text-[#64748B] text-[16px] font-normal">
+            Check back soon for new job opportunities
+          </p>
+        </div>
+      </div>
     </section>
+
+    <!-- Js Linkup -->
+    <script src="./Dom & Js Functions/header-counter.js"></script>
+
+    <!-- Js Linkup -->
+    <script src="./Dom & Js Functions/toggle.js"></script>
   </body>
 </html>
