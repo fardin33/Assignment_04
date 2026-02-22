@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment - 04 : Job Application Tracker</title>
+
+    <!-- Linkup : TailWind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- LinkUp : Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styling -->
+    <style>
+      .geist {
+        font-family: "Geist", sans-serif;
+      }
+      body {
+        background-color: #f8fafc;
+      }
+    </style>
+  </head>
+
+  <body class="geist">
+    <!-- Main Section For Whole Page -->
+    <section class="w-[80%] mx-auto mt-13">
+      <!-- First Main Part - 01  : Header Part   -->
+
+      <!-- Header Text : Job Application Tracker -->
+      <h2 class="text-[#002C5C] text-[30px] font-bold">
+        Job Application Tracker
+      </h2>
+
+      <!-- Parent Div of 3 Cards + Bottom Border Line -->
+      <div class="grid grid-cols-3 gap-4 mt-5 border-b border-[#E6E7E9] pb-7.5">
+        <!-- Child Card - 01 : Total Card -->
+        <div
+          class="total-card bg-white p-5 rounded-lg border border-gray-100 shadow-[0_1px_1px_rgba(0,0,0,0.05)]"
+        >
+          <p class="text-text-black text-sm">Total</p>
+          <h2 class="text-[#002C5C] text-2xl">8</h2>
+        </div>
+
+        <!-- Child Card - 02 : Interview Card -->
+        <div
+          class="total-card bg-white p-5 rounded-lg border border-gray-100 shadow-[0_1px_1px_rgba(0,0,0,0.05)]"
+        >
+          <p class="text-black text-sm">Interview</p>
+          <h2 class="text-[#10B981] text-2xl">0</h2>
+        </div>
+
+        <!-- Child Card - 03 : Rejected Card -->
+        <div
+          class="total-card bg-white p-5 rounded-lg border border-gray-100 shadow-[0_1px_1px_rgba(0,0,0,0.05)]"
+        >
+          <p class="text-text-black text-sm">Rejected</p>
+          <h2 class="text-[#EF4444] text-2xl">0</h2>
+        </div>
+      </div>
+
+      <!-- Second Parent Part - 02 : Second Main Part || Available Jobs || All,Interview,Rejected -->
+      <section class="second-main-section">
+        <!-- First Child Part - 01  : Available Jobs  -->
+        <div class="mt-[30px]">
+          <div class="flex justify-between">
+            <h2 class="text-lg font-semibold text-[#002C5C]">Available Jobs</h2>
+            <span class="text-[#64748B] font-medium"> 8 </span>
+          </div>
+        </div>
+
+        <!-- Second child Part - 02 : All,Interview,Rejected Toggling -->
+        <div>
+          <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl">
+            Responsive
+          </button>
+        </div>
+      </section>
+    </section>
+  </body>
+</html>
