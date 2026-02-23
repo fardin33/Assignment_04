@@ -65,4 +65,9 @@ function toggleStyle(id) {
       }
     }
   }
+
+  // ===================================
+  // No Jobs Show & hide Condition :
+  // ===================================
+  noJobCards.style.display = ActiveJobCount === 0 ? "block" : "none";
 }
