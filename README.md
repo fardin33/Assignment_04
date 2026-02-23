@@ -1,5 +1,5 @@
-|----------------START : 01 -----------------|
-01 || Question : What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
+|------------- START : 01 -----------|
+01 || Question : What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll? .
 01 || Answer   : 
 
 getElementById :
@@ -26,28 +26,28 @@ querySelectorAll  :
   - Advantage : Can manipulate multiple elements at once using loops or index.
   - Structure : document.querySelectorAll("selector");
    
-|----------------END : 01 ------------------|
+|------------- END : 01 ---------------|
       
 
-|----------------START : 02 ------------------|
+|------------- START : 02 -------------|
 02 || Qestion : How do you create and insert a new element into the DOM?
 02 || Answer  :
-|----------------END : 02 ------------------|
+|---------------- END : 02 ------------|
 
 
-|----------------START : 03 ------------------|
+|---------------- START : 03 -----------|
 03 || Qestion : What is Event Bubbling? And how does it work?
 03 || Answer  :
-|----------------END : 03 ------------------|
+|---------------- END : 03 -------------|
 
 
-|----------------START : 04 ------------------|
+|--------------- START : 04 ------------|
 04 || Qestion : What is Event Delegation in JavaScript? Why is it useful?
 04 || Answer  :
-|----------------END : 04 ------------------|
+|---------------- END : 04 -------------|
 
 
-|----------------START : 05 ------------------|
+|---------- ---- START : 05 ------------|
 05 || Qestion : What is the difference between preventDefault() and stopPropagation() methods?
 05 || Answer  :
-|----------------END : 05 ------------------|
+|---------------- END : 05 -------------|
