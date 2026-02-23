@@ -1,36 +1,77 @@
-// Initially No Jobs Available Section  Will Be hidden  :
+// ===================================
+// All Toggling Function And Dom :
+// ===================================
 
-//  No Jobs Available Hidden :
-// document.getElementById("No-jobs-available").style.display = "none";
-
-// If Click All Button = Jobs Card Block || No Jobs none :
-// document.getElementById("All-btn").addEventListener("click", function () {
-//   document.getElementById("all-jobs-available").style.display = "block";
-
-//   document.getElementById("No-jobs-available").style.display = "none";
-// });
-
-//===== Get The Buttons Via Id : =====//
 const allButton = document.getElementById("All-btn");
 const interviewButton = document.getElementById("Interview-btn");
 const rejectedButton = document.getElementById("Rejected-btn");
 
-//===== Toggle Machine Function : =====//
+const allSection = document.getElementById("all-jobs-available");
+const noJobsDiv = document.getElementById("No-jobs-available");
+
+// Default Theme Color :
+allButton.classList.add("bg-[#3B82F6]", "text-white");
+noJobsDiv.style.display = "none";
 
 function toggleStyle(id) {
-  // Remove Default Active Style :
-  allButton.classList.remove("bg-[#3B82F6]", "text-white");
-  interviewButton.classList.remove("bg-[#3B82F6]", "text-white");
-  rejectedButton.classList.remove("bg-[#3B82F6]", "text-white");
+  // ===================================
+  // Button styling, add & remove :
+  // ===================================
+  [allButton, interviewButton, rejectedButton].forEach((btn) => {
+    btn.classList.remove("bg-[#3B82F6]", "text-white");
+    btn.classList.add("bg-white", "text-[#64748B]");
+  });
 
-  //===== Add Style After Clicked : =====//
-  allButton.classList.add("bg-white", "text-[#64748B]");
-  interviewButton.classList.add("bg-white", "text-[#64748B]");
-  rejectedButton.classList.add("bg-white", "text-[#64748B]");
+  // Selected Styling :
+  const selectedBtn = document.getElementById(id);
+  selectedBtn.classList.remove("bg-white", "text-[#64748B]");
+  selectedBtn.classList.add("bg-[#3B82F6]", "text-white");
 
-  //===== Selected Style After Click : =====//
-  const selectedBtnStyle = document.getElementById(id);
+  const cards = allSection.children;
+  let ActiveJobCount = 0;
 
-  selectedBtnStyle.classList.remove("bg-white", "text-[#64748B]");
-  selectedBtnStyle.classList.add("bg-[#3B82F6]", "text-white");
+  for (let card of cards) {
+    const statusText = card.querySelector(".status").innerText;
+
+    // ===================================
+    // Now,All Jobs Count :
+    // ===================================
+    if (id === "All-btn") {
+      card.style.display = "block";
+      ActiveJobCount++;
+    }
+
+    // ===================================
+    // Now,Interview Count :
+    // ===================================
+    else if (id === "Interview-btn") {
+      if (statusText === "INTERVIEW") {
+        card.style.display = "block";
+        ActiveJobCount++;
+      } else {
+        card.style.display = "none";
+      }
+    }
+
+    // ===================================
+    // Now, Rejected Count ======
+    // ===================================
+    else if (id === "Rejected-btn") {
+      if (statusText === "REJECTED") {
+        card.style.display = "block";
+        ActiveJobCount++;
+      } else {
+        card.style.display = "none";
+      }
+    }
+  }
+
+  // ===================================
+  // No Jobs Show & hide Condition :
+  // ===================================
+  if (id === "All-btn") {
+    noJobsDiv.style.display = "none";
+  } else {
+    noJobsDiv.style.display = ActiveJobCount === 0 ? "block" : "none";
+  }
 }
