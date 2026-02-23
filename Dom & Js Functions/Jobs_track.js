@@ -9,7 +9,7 @@ let interviewList = [];
 let rejectedList = [];
 
 // ===================================
-// Get All Button Via Id :
+// Get All Buttons & Initialize , Function :
 // ===================================
 
 const totalJobs = document.getElementById("total-job-card");
@@ -31,9 +31,9 @@ function initialize() {
 
 initialize();
 
-// ===================================
-// All Card Buttons Click Functions :
-// ===================================
+// ==============================================
+// Part - 01 : All Card Buttons Click Functions
+// ==============================================
 
 allMainCardSection.addEventListener("click", function (event) {
   const card = event.target.closest(".card");
@@ -41,15 +41,15 @@ allMainCardSection.addEventListener("click", function (event) {
 
   const statusBtn = card.querySelector(".status");
 
-  // ===================================
-  // Part - 02 : Interview Function
-  // ===================================
+  // ======================================
+  // Part - 02 : Interview Button Function
+  // ======================================
 
   if (event.target.classList.contains("interview-card-btn")) {
     if (statusBtn.innerText === "INTERVIEW") return;
 
     // Remove from rejected list
-    rejectedList = rejectedList.filter((e) => e !== card);
+    rejectedList = rejectedList.filter((event) => event !== card);
 
     statusBtn.innerText = "INTERVIEW";
 
@@ -74,7 +74,7 @@ allMainCardSection.addEventListener("click", function (event) {
     if (statusBtn.innerText === "REJECTED") return;
 
     // Remove from interview list
-    interviewList = interviewList.filter((e) => e !== card);
+    interviewList = interviewList.filter((event) => event !== card);
 
     statusBtn.innerText = "REJECTED";
 
@@ -90,6 +90,30 @@ allMainCardSection.addEventListener("click", function (event) {
     interviewCount.innerText = interviewList.length;
 
     currentTheme();
+  }
+
+  // ===================================
+  // Part - 03 : Delete Function
+  // ===================================
+  if (event.target.closest(".delete-btn")) {
+    // Delete Cards from interview list
+    interviewList = interviewList.filter((event) => event !== card);
+
+    // Delete Cards from rejected list
+    rejectedList = rejectedList.filter((event) => event !== card);
+
+    // Delete card from Job Cards
+    card.remove();
+
+    // After Deleted Cards, Now Calculate total Cards :
+    const finalUpdatedCards = allMainCardSection.children.length;
+    totalJobs.innerText = finalUpdatedCards;
+
+    availableJobs.innerText = finalUpdatedCards;
+    interviewCount.innerText = interviewList.length;
+    rejectedCount.innerText = rejectedList.length;
+
+    // ---
   }
 });
 

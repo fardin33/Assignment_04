@@ -7,11 +7,11 @@ const interviewButton = document.getElementById("Interview-btn");
 const rejectedButton = document.getElementById("Rejected-btn");
 
 const allSection = document.getElementById("all-jobs-available");
-const noJobsDiv = document.getElementById("No-jobs-available");
+const noJobCards = document.getElementById("No-jobs-available");
 
 // Default Theme Color :
 allButton.classList.add("bg-[#3B82F6]", "text-white");
-noJobsDiv.style.display = "none";
+noJobCards.style.display = "none";
 
 function toggleStyle(id) {
   // ===================================
@@ -64,14 +64,5 @@ function toggleStyle(id) {
         card.style.display = "none";
       }
     }
-  }
-
-  // ===================================
-  // No Jobs Show & hide Condition :
-  // ===================================
-  if (id === "All-btn") {
-    noJobsDiv.style.display = "none";
-  } else {
-    noJobsDiv.style.display = ActiveJobCount === 0 ? "block" : "none";
   }
 }
