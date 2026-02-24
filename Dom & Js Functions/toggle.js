@@ -9,14 +9,16 @@ const rejectedButton = document.getElementById("Rejected-btn");
 const allSection = document.getElementById("all-jobs-available");
 const noJobCards = document.getElementById("No-jobs-available");
 
+const availableJobsCount = document.getElementById("available-jobs");
+
 // Default Theme Color :
 allButton.classList.add("bg-[#3B82F6]", "text-white");
 noJobCards.style.display = "none";
 
+// ===================================
+// Button styling, add & remove :
+// ===================================
 function toggleStyle(id) {
-  // ===================================
-  // Button styling, add & remove :
-  // ===================================
   [allButton, interviewButton, rejectedButton].forEach((btn) => {
     btn.classList.remove("bg-[#3B82F6]", "text-white");
     btn.classList.add("bg-white", "text-[#64748B]");
@@ -70,4 +72,11 @@ function toggleStyle(id) {
   // No Jobs Show & hide Condition :
   // ===================================
   noJobCards.style.display = ActiveJobCount === 0 ? "block" : "none";
+
+  // ===========================================
+  // Active Job Cads counts dynamically :
+  // ===========================================
+
+  const TotalJobs = allSection.children.length;
+  availableJobsCount.innerText = `${ActiveJobCount} of ${TotalJobs}`;
 }

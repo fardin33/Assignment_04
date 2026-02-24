@@ -117,7 +117,7 @@ allMainCardSection.addEventListener("click", function (event) {
     if (allMainCardSection.children.length === 0) {
       noJobCards.style.display = "block";
     } else {
-      // Current tab Show korbe
+      // Current tab Show korbe :
       currentTheme();
     }
   }
