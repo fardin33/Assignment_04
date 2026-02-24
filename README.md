@@ -75,6 +75,19 @@
 
 03 || Answer  :
 
+|| What is Event Bubbling :
+
+|| It Does : When an event occurs on a child element, that event automatically propagates upward to its parent → grandparent → document.
+
+|| how Does Bubbling  work :
+|| When an event occurs on an element (such as a click), then:
+ - The event listener of the target element is executed first.
+ - The event then goes to its parent element.
+ - Next, the event reaches the grandparent element.
+ - The event can continue to propagate up to the document.
+
+ - Event bubbling = child → parent → grandparent → document propagation.  
+
 |---------------- END : 03 -------------|
 
 
@@ -83,6 +96,18 @@
 04 || Qestion : What is Event Delegation in JavaScript? Why is it useful?
 
 04 || Answer  :
+
+|| What is Event Delegation in JavaScript : Event Delegation is a technique where you place a single event listener on the parent element,
+   and use that listener for its child elements.
+
+|| Why is Event Delegation useful :
+
+ - Only one listener is required on the parent instead of multiple child elements.
+ - All events can be managed from one place.
+ - New elements are automatically handled when the UI changes.
+ - By checking the condition, specific child handling can be done from the parent listener.
+ - Different event types can be handled in the same parent element.
+
 |---------------- END : 04 -------------|
 
 
@@ -91,5 +116,19 @@
 05 || Qestion : What is the difference between preventDefault() and stopPropagation() methods?
 
 05 || Answer  :
+
+|| preventDefault() :
+ - Stops default browser behavior.
+ - Stops page reload on form submit or link click.
+ - Its Used to control form submit or input behavior.
+ - Its a Method of Event object.
+ - Its Works with all event types.
+
+|| stopPropagation() :
+ - Does not stop the browser's default behavior.
+ - Its Stops the default bubbling.
+ - If the child element is clicked, the parent's listener will not be triggered.
+ - Also Works even if new elements are added.
+ - Default action and propagation can be controlled at the same time.
 
 |---------------- END : 05 -------------|
