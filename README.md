@@ -112,7 +112,7 @@
 |---------------- END : 04 -------------|
 
 
-|---------- ---- START : 05 ------------|
+|--------------- START : 05 ------------|
 
 05 || Qestion : What is the difference between preventDefault() and stopPropagation() methods?
 
