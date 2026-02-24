@@ -610,23 +610,47 @@
       
       <!--============ No Jobs Available Section : =============-->
       <div
-        id="No-jobs-available"
-        class="w-[80] mx-auto flex items-center justify-center border border-gray-100 bg-white shadow-[0_1px_1px_rgba(0,0,0,0.05)] rounded-lg mt-4 mb-4 p-28"
-      >
-        <div class="rounded-lg text-center">
-          <img
-            class="h-20 mx-auto mb-3"
-            src="./Assets/jobs.png"
-            alt="Not Found"
-          />
-          <h2 class="text-[#002C5C] font-semibold text-[24px]">
-            No jobs available
-          </h2>
-          <p class="text-[#64748B] text-[16px] font-normal">
-            Check back soon for new job opportunities
-          </p>
-        </div>
-      </div>
+  id="No-jobs-available"
+  class="w-full min-[477px]:w-[80%] 
+         mx-auto
+         flex items-center justify-center 
+         border border-gray-100 
+         bg-white 
+         shadow-[0_1px_1px_rgba(0,0,0,0.05)] 
+         rounded-lg 
+         mt-4 mb-4 
+         p-6 min-[477px]:p-28"
+>
+  <div class="text-center">
+
+    <!-- Image -->
+    <img
+      class="h-12 min-[477px]:h-20 
+             mx-auto mb-2 min-[477px]:mb-3"
+      src="./Assets/jobs.png"
+      alt="Not Found"
+    />
+
+    <!-- Title -->
+    <h2
+      class="text-[#002C5C] 
+             font-semibold 
+             text-[16px] min-[477px]:text-[24px]"
+    >
+      No jobs available
+    </h2>
+
+    <!-- Description -->
+    <p
+      class="text-[#64748B] 
+             text-[13px] min-[477px]:text-[16px] 
+             font-normal"
+    >
+      Check back soon for new job opportunities
+    </p>
+
+  </div>
+</div>
     </section>
 
     <!-- Js Linkup -->

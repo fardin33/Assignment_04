@@ -115,7 +115,7 @@ allMainCardSection.addEventListener("click", function (event) {
 
     // When No Card Available Then Show : No Card Available Ui:
     if (allMainCardSection.children.length === 0) {
-      noJobsDiv.style.display = "block";
+      noJobCards.style.display = "block";
     } else {
       // Current tab Show korbe
       currentTheme();
