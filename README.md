@@ -80,6 +80,7 @@
 || It Does : When an event occurs on a child element, that event automatically propagates upward to its parent → grandparent → document.
 
 || how Does Bubbling  work :
+
 || When an event occurs on an element (such as a click), then:
  - The event listener of the target element is executed first.
  - The event then goes to its parent element.
