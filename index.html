@@ -44,7 +44,7 @@
         <!-- First Main Part - 01  : Header Part   -->
 
         <!-- Header Text : Job Application Tracker -->
-        <h2 class="text-[#002C5C] text-[30px] font-bold">
+        <h2 class="text-[#002C5C] text-[22px] min-[477px]:text-[30px] font-bold">
           Job Application Tracker
         </h2>
 
@@ -54,26 +54,26 @@
         >
           <!-- Child Card - 01 : Total Card -->
           <div
-            class="total-card bg-white p-5 rounded-lg border-gray-100 shadow-[0_1px_1px_rgba(0,0,0,0.05)]"
+            class="total-card bg-white p-3 min-[477px]:p-5 rounded-lg border-gray-100 shadow-[0_1px_1px_rgba(0,0,0,0.05)]"
           >
-            <p class="text-text-black text-sm">Total</p>
-            <p id="total-job-card" class="text-[#002C5C] text-2xl">0</p>
+            <p class="text-text-black text-[12px] min-[477px]:text-sm">Total</p>
+            <p id="total-job-card" class="text-[#002C5C] text-xl min-[477px]:text-2xl">0</p>
           </div>
 
           <!-- Child Card - 02 : Interview Card -->
           <div
-            class="total-card bg-white p-5 rounded-lg border border-gray-100 shadow-[0_1px_1px_rgba(0,0,0,0.05)]"
+            class="total-card bg-white p-3 min-[477px]:p-5 rounded-lg border border-gray-100 shadow-[0_1px_1px_rgba(0,0,0,0.05)]"
           >
-            <p class="text-black text-sm">Interview</p>
-            <p id="interview-jobs-card" class="text-[#10B981] text-2xl">0</p>
+            <p class="text-black text-[12px] min-[477px]:text-sm">Interview</p>
+            <p id="interview-jobs-card" class="text-[#10B981] text-xl min-[477px]:text-2xl">0</p>
           </div>
 
           <!-- Child Card - 03 : Rejected Card -->
           <div
-            class="total-card bg-white p-5 rounded-lg border border-gray-100 shadow-[0_1px_1px_rgba(0,0,0,0.05)]"
+            class="total-card bg-white p-3 min-[477px]:p-5 rounded-lg border border-gray-100 shadow-[0_1px_1px_rgba(0,0,0,0.05)]"
           >
-            <p class="text-text-black text-sm">Rejected</p>
-            <p id="rejected-job-card" class="text-[#EF4444] text-2xl">0</p>
+            <p class="text-text-black text-[12px] min-[477px]:text-sm">Rejected</p>
+            <p id="rejected-job-card" class="text-[#EF4444] text-xl min-[477px]:text-2xl">0</p>
           </div>
         </div>
       </header>
@@ -84,7 +84,7 @@
         <div class="mt-[30px]">
           <div class="flex justify-between">
             <h2 class="text-lg font-semibold text-[#002C5C]">Available Jobs</h2>
-            <span id="available-jobs" class="text-[#64748B] font-medium">
+            <span id="available-jobs" class="text-[#64748B] font-medium">0
             </span>
           </div>
         </div>
@@ -95,7 +95,7 @@
           <button
             onclick="toggleStyle('All-btn')"
             id="All-btn"
-            class="text-white bg-[#3B82F6] text-[12px] font-medium rounded-sm py-1.5 px-8 mt-5 border-gray-100 shadow-[0_1px_1px_rgba(0,0,0,0.05)]""
+            class="text-white bg-[#3B82F6] text-[11px] min-[477px]:text-[13px] font-medium rounded-sm py-1.5  px-5 min-[477px]:px-6 mt-5 border-gray-100 shadow-[0_1px_1px_rgba(0,0,0,0.05)]""
           >
             All
           </button>
@@ -104,7 +104,7 @@
           <button
             onclick="toggleStyle('Interview-btn')"
             id="Interview-btn"
-            class="text-[#64748B] bg-white text-[12px] font-medium rounded-sm py-1.5 px-8 mt-5 border-gray-100 shadow-[0_1px_1px_rgba(0,0,0,0.05)]"
+            class="text-[#64748B] bg-white text-[11px] min-[477px]:text-[13px] font-medium rounded-sm py-1.5 px-5 min-[477px]:px-6 mt-5 border-gray-100 shadow-[0_1px_1px_rgba(0,0,0,0.05)]"
           >
             <!-- hover:bg-gray-600 hover:text-white -->
             Interview
@@ -114,7 +114,7 @@
           <button
             onclick="toggleStyle('Rejected-btn')"
             id="Rejected-btn"
-            class="text-[#64748B] bg-white text-[12px] font-medium rounded-sm py-1.5 px-8 mt-5 border-gray-100 shadow-[0_1px_1px_rgba(0,0,0,0.05)]"
+            class="text-[#64748B] bg-white text-[11px] min-[477px]:text-[13px] font-medium rounded-sm py-1.5 px-5 min-[477px]:px-6 mt-5 border-gray-100 shadow-[0_1px_1px_rgba(0,0,0,0.05)]"
           >
             <!-- hover:bg-gray-600 hover:text-white -->
             Rejected
@@ -611,7 +611,7 @@
       <!--============ No Jobs Available Section : =============-->
       <div
   id="No-jobs-available"
-  class="w-full min-[477px]:w-[80%] 
+  class="w-[100%] 
          mx-auto
          flex items-center justify-center 
          border border-gray-100 
@@ -623,7 +623,7 @@
 >
   <div class="text-center">
 
-    <!-- Image -->
+    <!-- No Jobs Available : Image -->
     <img
       class="h-12 min-[477px]:h-20 
              mx-auto mb-2 min-[477px]:mb-3"
@@ -631,7 +631,7 @@
       alt="Not Found"
     />
 
-    <!-- Title -->
+    <!-- No Jobs Available : Title -->
     <h2
       class="text-[#002C5C] 
              font-semibold 
@@ -640,7 +640,7 @@
       No jobs available
     </h2>
 
-    <!-- Description -->
+    <!-- No Jobs Available : Description -->
     <p
       class="text-[#64748B] 
              text-[13px] min-[477px]:text-[16px] 
