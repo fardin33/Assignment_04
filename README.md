@@ -4,29 +4,29 @@
 
 01 || Answer   : 
 
-getElementById :
-  - It Does   : Finds a Specific single element by its ID
-  - Id Unique : An Id cannot be used more than once on an HTML page.
-  - Structure : document.getElementById("idName"); // A name is given here, but mainly it is an ID; the “Name” represents the ID.
+|| getElementById :
+   - It Does   : Finds a Specific single element by its ID
+   - Id Unique : An Id cannot be used more than once on an HTML page.
+   - Structure : document.getElementById("Name"); // A Name is given here, but mainly it is an ID. the “Name” represents the ID.
   
 
-getElementsByClassName :
-  - It Does   : Finds all matching elements by class name.
-  - Advantage : Many elements of the same type can be manipulated together.
-  - Structure : document.getElementsByClassName("className");
+|| getElementsByClassName :
+   - It Does   : Finds all matching elements by class name.
+   - Advantage : Many elements of the same type can be manipulated together.
+   - Structure : document.getElementsByClassName("className");
    
 
 || querySelector Vs querySelectorAll ||
  
-querySelector :
-  - It Does   : Finds the first element that matches a CSS selector.
-  - Advantage : Quick access to a single element for manipulation.
-  - Structure : document.querySelector("selector");
+|| querySelector :
+   - It Does   : Finds the first element that matches a CSS selector.
+   - Advantage : Quick access to a single element for manipulation.
+   - Structure : document.querySelector("selector");
 
-querySelectorAll  :  
-  - It Does   : Finds all elements that match a CSS selector.
-  - Advantage : Can manipulate multiple elements at once using loops or index.
-  - Structure : document.querySelectorAll("selector");
+|| querySelectorAll  :  
+   - It Does   : Finds all elements that match a CSS selector.
+   - Advantage : Can manipulate multiple elements at once using loops or index.
+   - Structure : document.querySelectorAll("selector");
    
 |------------- END : 01 ---------------|
       
@@ -36,6 +36,37 @@ querySelectorAll  :
 02 || Qestion : How do you create and insert a new element into the DOM?
 
 02 || Answer  :
+
+|| Create a Element :
+   - Structure : document.createElement();
+   - Example   : const newElement = document.createElement("div"); // Creates a <div> Element.
+    
+|| Insert Element  : 
+   - Structure : parentElement.appendChild(); // Add New Element Inside od AppendChild().
+   - Example   : document.getElementById("idName").appendChild(newElement);
+
+|| Create & Insert Element :
+
+|| Example :
+
+|| HTML CODE :
+  <div id="container"></div>
+
+|| JS Dom :  
+   || Create Element :
+   const newElement = document.createElement("div");
+
+   || Add Text Element :
+   newElement.textContent = "Hello World";
+
+   || Insert Text Element Into DOM :
+   document.getElementById("container").appendChild(newElement);    
+
+|| Output : 
+    <div id="container"> 
+      <div>Hello World</div>
+    </div>
+
 |---------------- END : 02 ------------|
 
 
@@ -44,6 +75,7 @@ querySelectorAll  :
 03 || Qestion : What is Event Bubbling? And how does it work?
 
 03 || Answer  :
+
 |---------------- END : 03 -------------|
 
 
