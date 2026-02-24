@@ -8,9 +8,9 @@ let interviewList = [];
 // Array : Rejected List
 let rejectedList = [];
 
-// ===================================
+// =========================================
 // Get All Buttons & Initialize , Function :
-// ===================================
+// =========================================
 
 const totalJobs = document.getElementById("total-job-card");
 const interviewCount = document.getElementById("interview-jobs-card");
@@ -64,7 +64,7 @@ allMainCardSection.addEventListener("click", function (event) {
     interviewCount.innerText = interviewList.length;
     rejectedCount.innerText = rejectedList.length;
 
-    refreshCurrentTab();
+    currentTheme();
   }
 
   // ===================================
@@ -74,7 +74,7 @@ allMainCardSection.addEventListener("click", function (event) {
     if (statusBtn.innerText === "REJECTED") return;
 
     // Remove from interview list
-    interviewList = interviewList.filter((event) => event !== card);
+    interviewList = interviewList.filter((c) => c !== card);
 
     statusBtn.innerText = "REJECTED";
 
