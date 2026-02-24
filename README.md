@@ -50,7 +50,7 @@
 || Example :
 
 || HTML CODE :
-  <div id="container"></div>
+  div > id ="container"
 
 || JS Dom :  
    || Create Element :
@@ -63,9 +63,8 @@
    document.getElementById("container").appendChild(newElement);    
 
 || Output : 
-    <div id="container"> 
-      <div>Hello World</div>
-    </div>
+   div > id="container"
+     div > Hello World 
 
 |---------------- END : 02 ------------|
 
